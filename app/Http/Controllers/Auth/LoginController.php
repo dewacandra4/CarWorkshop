@@ -27,6 +27,16 @@ class LoginController extends Controller
                 ]
             ], 401);
         }
-        return response()->json(compact('token'));
+        // return response()->json(compact('token'));
+        return $this->respondWithToken($token);
+    }
+
+    protected function respondWithToken($token)
+    {
+        return response()->json([
+            'access_token' => $token,
+            'token_type' => 'bearer',
+            'expires_in(hours)' => auth()->factory()->getTTL() / 60
+        ]);
     }
 }

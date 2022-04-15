@@ -20,7 +20,7 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => request('name'),
             'email' => request('email'),
-            'role' => 'car_owner',
+            'role' => 2,
             'password' => Hash::make(request('password')),
         ]);
         return response()->json($user, 201);
@@ -30,7 +30,7 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => request('name'),
             'email' => request('email'),
-            'role' => 'mechanic',
+            'role' => 1,
             'password' => Hash::make(request('password')),
         ]);
         return response()->json($user, 201);
