@@ -19,14 +19,18 @@ class LoginController extends Controller
             'email' => 'required|string|email',
             'password' => 'required|string'
         ]);
+        $credentials = $request->only(['email', 'password']);
 
-        if(!$token = auth()->attempt($request->only(['email', 'password']))) {
+        if(!$token = auth()->attempt( $credentials )) {
             return response()->json([
                 'errors' => [
                     'email' => ['Invalid credentials']
                 ]
             ], 401);
         }
+        $user = auth()->user();
+        // Set Login
+        auth()->login ($user);
         // return response()->json(compact('token'));
         return $this->respondWithToken($token);
     }
@@ -36,7 +40,8 @@ class LoginController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in(hours)' => auth()->factory()->getTTL() / 60
+            'expires_in(hours)' => auth()->factory()->getTTL() / 60,
+            'user' => auth()->user()
         ]);
     }
 }

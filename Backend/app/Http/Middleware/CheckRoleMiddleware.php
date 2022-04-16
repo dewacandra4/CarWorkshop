@@ -17,20 +17,24 @@ class CheckRoleMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check())
+        if(auth()->user())
         {
-            if(Auth::user()->role_as == 'mecanic')
+            if(auth()->user()->role_id == 1)
             {
                 return $next($request);
             }
             else
             {
-                return redirect('/');
+                return response()->json(['error' => 'Unauthorized'], 401);
             }
         }
         else
         {
-            return redirect('/login')->with('status','Please Login First');
+            return response()->json([
+                'errors' => [
+                    'message' => ['Please login first !']
+                ]
+            ], 401);
         }
     }
 }

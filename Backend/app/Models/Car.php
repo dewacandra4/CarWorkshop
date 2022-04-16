@@ -16,8 +16,24 @@ class Car extends Model
         'owner_id',
         'mechanic_id',
         'service_id',
-        'service_date',
         'status'
     ];
+
+    protected $with = ['owner', 'mechanic', 'service'];
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'owner_id');
+    }
+
+    public function mechanic()
+    {
+        return $this->belongsTo(User::class, 'mechanic_id');
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id');
+    }
 
 }
