@@ -13,6 +13,7 @@
 
 Please check the laravel offical installation documentation . [Official Documentation](https://laravel.com/docs/9.x/installation)
 
+## Run Laravel
 Clone the repository
 
 ```bash
@@ -54,15 +55,25 @@ Start the local server
     php artisan serve
 ```
 
-Access the server using browsers at http://127.0.0.1:8000/ or http://localhost:8000
+Access the server using browser at http://127.0.0.1:8000/ or http://localhost:8000
 
 ## Installation React JS 
 Getting Started with Create React App
 
+You need to have Node >= 14.0.0 and npm >= 5.6 on your machine to run and create a react project: 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Available Scripts
+## Run React 
 
+Open the command / bash on your machine and run:
+
+```bash
+    npm start
+```
+to run the local server and access the server using browser at http://127.0.0.1:3000/ or http://localhost:3000
+
+## Available Scripts
 In the project directory, you can run:
 
 ### `npm start`
