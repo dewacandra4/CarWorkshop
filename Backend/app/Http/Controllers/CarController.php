@@ -49,7 +49,7 @@ class CarController extends Controller
             'body' => 'Your car has been registered, please wait for the mechanic to accept your car',
         ];
         \Mail::to($cars->owner->email)->send(new \App\Mail\EmailNotif($details_email));
-        return $cars;
+        return response()->json($cars, 200);
     }
 
     public function submitComplaint(Request $request)
@@ -70,7 +70,7 @@ class CarController extends Controller
         ];
         // Send email to mechanic for complaint
         \Mail::to(Car::find($id)->mechanic->email)->send(new \App\Mail\EmailNotif($details_email));
-        return $car;
+        return response()->json($car, 200);
     }
 
     /**
@@ -124,7 +124,7 @@ class CarController extends Controller
         ];
         // Send email to mechanic for job assignt
         \Mail::to($mechanic_email)->send(new \App\Mail\EmailNotif($details_email));
-        return $cars;
+        return response()->json($cars, 200);
     }
 
     /**

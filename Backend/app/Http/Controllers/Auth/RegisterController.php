@@ -23,7 +23,7 @@ class RegisterController extends Controller
             'role' => 2,
             'password' => Hash::make(request('password')),
         ]);
-        return response()->json($user, 201);
+        return response()->json($user, 200);
     }
     public function registerMechanic(RegisterRequest $request)
     {
@@ -33,7 +33,7 @@ class RegisterController extends Controller
             'role' => 1,
             'password' => Hash::make(request('password')),
         ]);
-        return response()->json($user, 201);
+        return response()->json($user, 200);
     }
 
 }

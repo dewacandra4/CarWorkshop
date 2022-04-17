@@ -53,6 +53,16 @@ export default function Login() {
                   Submit
                 </button>
               </form>
+              <hr />
+              <p className="text-center">
+                Admin :  email = <b> admin@gmail.com </b>, password = <b>password123</b>
+              </p>
+              <p className="text-center">
+                Mechanic : email = <b>mechanic@gmail.com</b>, password = <b>password123</b>
+              </p>
+              <p className="text-center">
+                CarOwner : email = <b>car_owner@gmail.com</b>, password = <b>password123</b>
+              </p>
             </div>
           </div>
         </div>

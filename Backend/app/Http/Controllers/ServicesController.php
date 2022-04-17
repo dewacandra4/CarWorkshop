@@ -32,7 +32,7 @@ class ServicesController extends Controller
         $services = Service::create(
             $request->only(['name', 'price'])
         );
-        return $services;
+        return response()->json($services, 200);
     }
 
     /**
@@ -57,9 +57,9 @@ class ServicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update($id, Request $request)
     {
-        $id = $request->id;
+        // $id = $request->id;
         $request->validate([
             'name' => 'required|',
             'price' => 'required|numeric',
@@ -67,7 +67,10 @@ class ServicesController extends Controller
         $services = Service::find($id)->update(
             $request->only(['name', 'price'])
         );
-        return $services;
+        return response ()->json([
+            'status' => '200',
+            'data' => $services
+        ]);
     }
 
     /**
