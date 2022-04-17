@@ -347,7 +347,7 @@ export default function Admin() {
                           <tr key={index}>
                             <th scope="row">{index + 1}</th>
                             <td>{service.name}</td>
-                            <td>{service.price}</td>
+                            <td>Rp{service.price}</td>
                             <td>
                               {/* <Link to={`/edit_service/${service.id}`}>
                                     <button className="btn btn-primary">

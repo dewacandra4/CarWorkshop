@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ServiceCollection;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -43,7 +44,7 @@ class ServicesController extends Controller
      */
     public function show()
     {
-        $service = Service::all();
+        $service = new ServiceCollection(Service::get());
         return response()->json([
             'status' => '200',
             'data' => $service
@@ -59,7 +60,7 @@ class ServicesController extends Controller
      */
     public function update( Request $request)
     {
-        // $id = $request->id;
+        $id = $request->id;
         $request->validate([
             'name' => 'required|',
             'price' => 'required|numeric',
