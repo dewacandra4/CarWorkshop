@@ -18,7 +18,7 @@ class ServiceResource extends JsonResource
         [
             'id' => $this->id,
             'name' => $this->name,
-            'price' => number_format($this->price,2,',','.'),
+            'price' => $this->price,
             'created_at' => $this->created_at->format('d/m/Y H:i:s'),
             'updated_at' => $this->updated_at->format('d/m/Y H:i:s')
         ];
