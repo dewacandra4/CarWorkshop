@@ -102,7 +102,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run eject`
 
 ## Entity Relationship Diagram (Crow's Foot)
-![ERD_Crows_Foot](https://ibb.co/9Z66tPM)
+![ERD_Crows_Foot](https://i.ibb.co/Hh66dZJ/ERD-Crow-Foot-Car-Workshop.jpg)
+
 ## State Machine Diagram
 
 ## Public Link Postman
