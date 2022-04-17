@@ -105,9 +105,11 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ![ERD_Crows_Foot](https://i.ibb.co/Hh66dZJ/ERD-Crow-Foot-Car-Workshop.jpg)
 
 ## State Machine Diagram
+![State Machine Diagram](https://i.ibb.co/hH63p1w/State-Machine-Diagram.jpg)
 
 ## Public Link Postman
 Open [CarWorkshop_PostMan](https://www.postman.com/supply-technologist-56058075/workspace/carworkshop/collection/19178862-65452c23-6cb6-4f4d-ba66-d6117388212d?action=share&creator=19178862)
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
