@@ -63,6 +63,12 @@ class UserController extends Controller
         $owner_car = User::where('role',2)->get();
         return $owner_car;
     }
+    public function showMechanic()
+    {
+        $mechanic = User::where('role',1)->get();
+        return $mechanic;
+    }
+
 
     /**
      * Update the specified resource in storage.

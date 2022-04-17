@@ -20,11 +20,11 @@ class CarResource extends JsonResource
             'model' => $this->model,
             'license_plate' => $this->license_plate,
             'car_owner' => $this->owner->name,
-            'mechanic' => $this->mechanic->name,
+            'mechanic' => $this->mechanic_id == null ? "waiting": $this->mechanic->name,
             'service' => $this->service->name,
             'status' => $this->status,
             'created_at' => $this->created_at->format('d/m/Y H:i:s'),
-            'updated_at' => $this->updated_at
+            'updated_at' => $this->updated_at->format('d/m/Y H:i:s')
         ];
     }
 }
